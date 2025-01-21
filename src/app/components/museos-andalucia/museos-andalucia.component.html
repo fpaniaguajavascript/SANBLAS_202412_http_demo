@@ -1,10 +1,11 @@
 <button (click)="cargarDatos()" [disabled]="cargando">Cargar museos</button>
+<input type="text" [(ngModel)]="provincia" placeholder="Provincia" (input)="buscar()">
 <div>
     <img *ngIf="cargando" width="100px" src="https://cssbud.com/wp-content/uploads/2022/05/pendulum.gif">
 </div>
 
 <div class="card-container">
-    <div *ngFor="let museo of museos" class="card">
+    <div *ngFor="let museo of museosFiltrados" class="card">
         <div class="card-header">
             <h2 class="museum-name">{{museo.name}}</h2>
             <p class="museum-location">{{museo.province}}, España</p>
